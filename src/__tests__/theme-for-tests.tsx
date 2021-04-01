@@ -10,8 +10,8 @@ interface Props {}
 
 export const UiThemeForTests: React.FunctionComponent<Props> = ({ children }) => {
   return (
-    <>
-      {children}
-    </>
+      <body>
+        {children}
+      </body>
   );
 };

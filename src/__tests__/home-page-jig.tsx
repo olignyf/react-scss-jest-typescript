@@ -16,10 +16,10 @@ export const HomePageJig: React.FunctionComponent = () => {
     console.trace('onReboot');
   };
 
-      //<UiThemeForTests />
+      //
   return (
-    <div>
-      <App/>
-    </div>
+   <UiThemeForTests>
+     <App/>
+   </UiThemeForTests>
   );
 };

@@ -28,13 +28,15 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": [ "**/?(*.)+(spec).[jt]s?(x)" ],
+    "testMatch": [
+      "**/?(*.)+(spec).[jt]s?(x)"
+    ],
     "transform": {
       "^.+\\.(js|jsx|mjs|tsx|ts)$": "babel-jest",
       "^.+\\.svg$": "jest-transform-file",
       "^.+\\.css$": "jest-transform-css",
       "^.+\\.less$": "jest-transform-css",
-      "^.+\\.scss$": "jest-transform-css"
+      "^.+\\.scss$": "sass-jest"
     },
     "transformIgnorePatterns": [
       "node_modules/(?!(bootstrap-less-port|@hai))"
@@ -71,6 +73,7 @@
     "jest-transform-css": "^2.1.0",
     "jest-transform-file": "^1.1.1",
     "jsdom-screenshot": "^4.0.0",
-    "react-i18next": "^11.8.12"
+    "react-i18next": "^11.8.12",
+    "sass-jest": "^0.1.7"
   }
 }

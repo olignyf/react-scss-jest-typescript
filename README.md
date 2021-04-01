@@ -1,11 +1,16 @@
 # History
 
-$ yarn create react-app react-scss-jest-typescript --template typescript
-$ yarn add node-sass
-$ yarn add --dev jest babel-jest jest-transform-file jest-transform-css 
-$ yarn add --dev @babel/plugin-proposal-export-default-from @babel/plugin-proposal-decorators 
-$ yarn add --dev jsdom-screenshot jest-image-snapshot
-$ yarn add react-i18next i18next i18next-browser-languagedetector i18next-intervalplural-postprocessor
+    $ yarn create react-app react-scss-jest-typescript --template typescript
+    $ yarn add node-sass
+    $ yarn add --dev jest babel-jest jest-transform-file jest-transform-css sass-jest
+    $ yarn add --dev @babel/plugin-proposal-export-default-from @babel/plugin-proposal-decorators 
+    $ yarn add --dev jsdom-screenshot jest-image-snapshot
+    $ yarn add react-i18next i18next i18next-browser-languagedetector i18next-intervalplural-postprocessor
+    $ yarn add --dev @types/lodash
+
+# Notes
+
+"sass-jest" npm package is used to render SCSS in jest unit tests. Otherwise the rendering will hang as other parser only support CSS and will error on SCSS.
 
 ## Available Scripts
 

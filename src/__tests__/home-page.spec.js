@@ -15,8 +15,8 @@ import { generateImage } from 'jsdom-screenshot';
 // add some helpful assertions
 import '@testing-library/jest-dom/extend-expect';
 
-//import { initializeI18n } from 'src/i18n';
-//initializeI18n();
+import { initializeI18n } from 'src/i18n';
+initializeI18n();
 
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 expect.extend({ toMatchImageSnapshot });
@@ -28,7 +28,7 @@ jest.useFakeTimers();
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
-  container = document.createElement('div');
+  container = document.createElement('html');
   document.body.appendChild(container);
 });
 
@@ -39,7 +39,7 @@ afterEach(() => {
   container = null;
 });
 
-describe('ConfirmPrompts', () => {
+describe('Home Page', () => {
   it('should render', async () => {
     // 1. react-test-renderer
     act(() => {
@@ -56,6 +56,8 @@ describe('ConfirmPrompts', () => {
     const screenshot = await generateImage();
     console.log('after gen screenshot');
     // and compare it to the previous sceenshot with toMatchImageSnapshot()
-    expect(screenshot).toMatchImageSnapshot();
+    expect(screenshot).toMatchImageSnapshot(); // png image
+    
+    expect(container).toMatchSnapshot(); // html text
   });
 });
