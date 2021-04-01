@@ -28,6 +28,7 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "testMatch": [ "**/?(*.)+(spec).[jt]s?(x)" ],
     "transform": {
       "^.+\\.(js|jsx|mjs|tsx|ts)$": "babel-jest",
       "^.+\\.svg$": "jest-transform-file",

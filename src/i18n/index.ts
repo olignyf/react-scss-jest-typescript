@@ -61,7 +61,13 @@ export const createI18nInitConfig: (
   whitelist: supportedLanguages,
 
   react: {
-    wait: false,
+    //wait: false,
+    //bindI18n: 'languageChanged',
+    //bindI18nStore: '',
+    //transEmptyNodeValue: '',
+    //transSupportBasicHtmlNodes: true,
+    //transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
+    useSuspense: true,
   },
 
   detection: {
@@ -81,7 +87,7 @@ export const initializeI18n = (debug?: boolean): void => {
         {
           en: english,
         },
-        debug,
+        debug
       ),
     );
 };

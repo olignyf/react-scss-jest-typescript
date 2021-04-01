@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "baseUrl": ".", /* this allow to use full path instead of only relative paths */
   },
   "include": [
     "src"

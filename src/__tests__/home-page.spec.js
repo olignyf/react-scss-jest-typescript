@@ -15,8 +15,8 @@ import { generateImage } from 'jsdom-screenshot';
 // add some helpful assertions
 import '@testing-library/jest-dom/extend-expect';
 
-import { initializeI18n } from 'src/i18n';
-initializeI18n();
+//import { initializeI18n } from 'src/i18n';
+//initializeI18n();
 
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 expect.extend({ toMatchImageSnapshot });
@@ -52,7 +52,9 @@ describe('ConfirmPrompts', () => {
     });
 
     // Take screenshot with generateImage()
+    console.log('here going to gen screenshot');
     const screenshot = await generateImage();
+    console.log('after gen screenshot');
     // and compare it to the previous sceenshot with toMatchImageSnapshot()
     expect(screenshot).toMatchImageSnapshot();
   });
