@@ -58,7 +58,7 @@ export const createI18nInitConfig: (
   },
 
   nonExplicitWhitelist: true,
-  whitelist: supportedLanguages,
+  supportedLngs: supportedLanguages,
 
   react: {
     //wait: false,

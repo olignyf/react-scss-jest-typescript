@@ -36,7 +36,7 @@
       "^.+\\.svg$": "jest-transform-file",
       "^.+\\.css$": "jest-transform-css",
       "^.+\\.less$": "jest-transform-css",
-      "^.+\\.scss$": "sass-jest"
+      "^.+\\.scss$": "jest-transform-scss"
     },
     "transformIgnorePatterns": [
       "node_modules/(?!(bootstrap-less-port|@hai))"
@@ -70,8 +70,10 @@
     "i18next": "^20.1.0",
     "jest": "^26.6.3",
     "jest-image-snapshot": "^4.4.1",
+    "jest-scss-transform": "^1.0.1",
     "jest-transform-css": "^2.1.0",
     "jest-transform-file": "^1.1.1",
+    "jest-transform-scss": "^1.0.0",
     "jsdom-screenshot": "^4.0.0",
     "react-i18next": "^11.8.12",
     "sass-jest": "^0.1.7"
