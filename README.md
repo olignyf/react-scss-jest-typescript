@@ -7,6 +7,7 @@
     $ yarn add --dev jsdom-screenshot jest-image-snapshot
     $ yarn add react-i18next i18next i18next-browser-languagedetector i18next-intervalplural-postprocessor
     $ yarn add --dev @types/lodash
+    $ yarn add react-bootstrap bootstrap@4.6.0
 
 ## Issues open and/or resolved
 
