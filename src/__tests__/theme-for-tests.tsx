@@ -8,6 +8,8 @@ initializeI18n(); // FIXME move to Haiui theme test init
 
 interface Props {}
 
+import './unit-tests.scss';
+
 export const UiThemeForTests: React.FunctionComponent<Props> = ({ children }) => {
   return (
       <body>
