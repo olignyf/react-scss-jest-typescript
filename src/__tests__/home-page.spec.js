@@ -10,7 +10,7 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { HomePageJig } from './home-page-jig';
 import 'regenerator-runtime/runtime';
-import { generateImage } from 'jsdom-screenshot';
+import { generateImage } from 'visual-screenshot';
 
 // add some helpful assertions
 import '@testing-library/jest-dom/extend-expect';

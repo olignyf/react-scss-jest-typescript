@@ -7115,11 +7115,6 @@ jest-runtime@^26.6.0, jest-runtime@^26.6.3:
     strip-bom "^4.0.0"
     yargs "^15.4.1"
 
-jest-scss-transform@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jest-scss-transform/-/jest-scss-transform-1.0.1.tgz#3c1cc0f512b0836accec0f2e352863fc894f333f"
-  integrity sha512-Z7uY+ip5qHu/QR05ZDYM9P5bkJjoCbtdkRZbpsPoBLCw9Eg/z5Wkk12E2k2vrV4J148YW7g3tdn/ZijfKKL01A==
-
 jest-serializer@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-serializer/-/jest-serializer-26.6.2.tgz#d139aafd46957d3a448f3a6cdabe2919ba0742d1"
@@ -7167,10 +7162,10 @@ jest-transform-file@^1.1.1:
   resolved "https://registry.yarnpkg.com/jest-transform-file/-/jest-transform-file-1.1.1.tgz#cad6c59986c74c695bd2ce3acfe4ab2fe87ebceb"
   integrity sha512-m76X80n9q1aWR931EqLL8FPRIU5pE5Bnw7nIkI/r+blZtdUbKS+/WlGt8VKOPTePpy2wZsKksuLS+k76LueB+w==
 
-jest-transform-scss@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-transform-scss/-/jest-transform-scss-1.0.0.tgz#fb4b91ffba383b8845c0b60742bc0d4fd66ec220"
-  integrity sha512-k4rzZxzoOAczdmd0u/x0QQVeyjHYcgA5byA9p+WvSEHg8SuRueaPdA+g+m9kq2w98hstM87rwDzaE7dR+qV5TA==
+jest-transform-scss@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/jest-transform-scss/-/jest-transform-scss-1.0.8.tgz#22b025f43a0e55ac17129da50469679f30c3a659"
+  integrity sha512-LAuqA1+MlVif5ST4NvAF9GT+yH+ef/cwMT+eCAt0sprSn2HF5w3jL1xrArSeHaC/2ausEs3QrbKSCbkzN4i7GQ==
   dependencies:
     common-tags "1.8.0"
     cosmiconfig "5.0.6"
@@ -7179,6 +7174,8 @@ jest-transform-scss@^1.0.0:
     postcss-load-config "2.0.0"
     postcss-modules "1.3.2"
     style-inject "0.3.0"
+  optionalDependencies:
+    postcss "^8.3.1"
 
 jest-util@^26.6.0, jest-util@^26.6.2:
   version "26.6.2"
@@ -7287,19 +7284,6 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
-
-jsdom-screenshot@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/jsdom-screenshot/-/jsdom-screenshot-4.0.0.tgz#633c1bd0e557244cd602b47dcd19c755093654d1"
-  integrity sha512-as86MWDSiwQEQqaw3qt41u4Fi0Wi60biHmL2p3xe8e/PoZoz/qcTmoCEsNrNzPm8RcnT69A8zXuMUL9g7uyQzA==
-  dependencies:
-    connect "3.7.0"
-    eslint-plugin-prettier "3.1.0"
-    finalhandler "1.1.2"
-    lodash.merge "^4.6.1"
-    pretty-format "24.8.0"
-    puppeteer "^1.12.2"
-    serve-static "1.14.1"
 
 jsdom@^16.4.0:
   version "16.4.0"
@@ -8073,6 +8057,11 @@ nanoid@^3.1.20:
   version "3.1.20"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.20.tgz#badc263c6b1dcf14b71efaa85f6ab4c1d6cfc788"
   integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
+
+nanoid@^3.3.1:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.2.tgz#c89622fafb4381cd221421c69ec58547a1eec557"
+  integrity sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -8848,6 +8837,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+picocolors@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
+  integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
 picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1, picomatch@^2.2.2:
   version "2.2.2"
@@ -9687,6 +9681,15 @@ postcss@^8.1.0:
     colorette "^1.2.1"
     nanoid "^3.1.20"
     source-map "^0.6.1"
+
+postcss@^8.3.1:
+  version "8.4.12"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.12.tgz#1e7de78733b28970fa4743f7da6f3763648b1905"
+  integrity sha512-lg6eITwYe9v6Hr5CncVbK70SoioNQIq81nsaG86ev5hAidQvmOeETBqs7jm43K2F5/Ley3ytDtriImV6TpNiSg==
+  dependencies:
+    nanoid "^3.3.1"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -11061,6 +11064,11 @@ source-list-map@^2.0.0:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==
 
+source-map-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
+  integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
 source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.3.tgz#190866bece7553e1f8f267a2ee82c606b5509a1a"
@@ -12185,6 +12193,19 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+visual-screenshot@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/visual-screenshot/-/visual-screenshot-1.0.1.tgz#3e36a61c4237328ada469ecc9f5c8aeeed0a4367"
+  integrity sha512-MIHKqvrwU0VZjcemV7pIA+tTRsZcV2zDiDcHchODSKGKa5NkI834BNBvqNlLv9UdOZXkUSlyBJR95ydKPuGIaw==
+  dependencies:
+    connect "3.7.0"
+    eslint-plugin-prettier "3.1.0"
+    finalhandler "1.1.2"
+    lodash.merge "^4.6.1"
+    pretty-format "24.8.0"
+    puppeteer "^1.12.2"
+    serve-static "1.14.1"
 
 vm-browserify@^1.0.1:
   version "1.1.2"

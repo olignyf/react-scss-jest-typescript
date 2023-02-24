@@ -21,14 +21,18 @@ exports[`Home Page should render 2`] = `
           </code>
            and save to reload.
         </p>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Click Me
+        </button>
         <a
           class="App-link"
           href="https://reactjs.org"
           rel="noopener noreferrer"
           target="_blank"
-        >
-          Learn React
-        </a>
+        />
       </header>
     </div>
   </body>

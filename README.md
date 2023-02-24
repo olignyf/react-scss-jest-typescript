@@ -1,3 +1,18 @@
+# Requirements:
+ nvm version 1.1.7 minimum
+ node 10.X minimum, 16.X recommended
+ versions tested with:
+  => nvm install 14.19.1
+  => nvm install 16.14.2
+     nvm use 16.14.2
+ python2 (for node-sass compiling)
+  => $ npm install --global --production windows-build-tools@4.0.0
+ Visual Studio 2013 or 2017 (The free Community version is fine, again for compiling node-sass)
+
+# Setup
+$ npm install yarn -g
+
+
 # History
 
     $ yarn create react-app react-scss-jest-typescript --template typescript
@@ -34,6 +49,10 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn jest`
+
+Runs the image snapshot tests
 
 ### `yarn build`
 
