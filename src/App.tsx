@@ -1,18 +1,53 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-import logo from './logo.svg';
 import './App.scss';
+import Sidebar from './components/sidebar';
+import { Home } from './pages/home';
+import { Components } from './pages/components';
+import { Hardware } from './pages/hardware';
+import { Help } from './pages/help';
+import { Outlet } from 'react-router-dom';
+import { Comparator } from './pages/comparator';
+import { ComparatorCPU } from './pages/comparator-cpu';
 
+const productRoutes = [
+  {
+    path: '/',
+    label: 'Home',
+    component: <Home/>
+  },
+  {
+    path: '/comparator',
+    label: 'Comparator',
+    component: <Comparator/>
+  },/*
+  {
+    path: '/comparator/cpu',
+    label: 'Comparator CPU',
+    component: <ComparatorCPU/>
+  },*/
+  {
+    path: '/components',
+    label: 'Components',
+    component: <Components/>
+  },
+  {
+    path: '/components/hardware',
+    label: 'Components > Hardware',
+    component: <Hardware/>
+  },
+  {
+    path: '/help',
+    label: 'Help',
+    component: <Help/>
+  }
+];
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <Button>Click Me</Button>
         <a
           className="App-link"
@@ -22,6 +57,15 @@ function App() {
         >
         </a>
       </header>
+
+
+
+      <div id="outlet">OUTLET
+      <Outlet />
+      </div>
+      
+      <Sidebar routes={productRoutes}/>
+
     </div>
   );
 }
