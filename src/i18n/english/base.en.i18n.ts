@@ -1,4 +1,4 @@
-/* eslint @typescript-eslint/camelcase: 0 */
+/* es lint @typescript-eslint/camelcase: 0 */
 export const base = {
   general: {
     add: 'Add',

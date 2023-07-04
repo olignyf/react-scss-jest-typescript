@@ -29,6 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint . --ext .ts",
     "jest": "jest --env=node --rootDir='.' --modulePaths='.' --roots='src/__tests__' "
   },
   "jest": {
@@ -74,7 +75,10 @@
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
     "@types/lodash": "^4.14.168",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
     "babel-jest": "^26.6.3",
+    "eslint": "^8.44.0",
     "i18next": "^20.1.0",
     "jest": "^26.6.3",
     "jest-image-snapshot": "^4.4.1",

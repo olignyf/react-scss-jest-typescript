@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import logo from '../logo.svg';
 
 interface Props {
+  children?: ReactNode;
 
 }
 
