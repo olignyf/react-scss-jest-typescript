@@ -11,10 +11,11 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "bootstrap": "4.6.0",
+    "formik": "^2.4.2",
     "i18next-browser-languagedetector": "^6.1.0",
     "i18next-intervalplural-postprocessor": "^3.0.0",
     "natsort": "^2.0.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",
@@ -22,7 +23,8 @@
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.19",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,12 +35,8 @@
     "jest": "jest --env=node --rootDir='.' --modulePaths='.' --roots='src/__tests__' "
   },
   "jest": {
-    "testEnvironment": "node",
     "testMatch": [
       "**/?(*.)+(spec).[jt]s?(x)"
-    ],
-    "moduleDirectories": [
-      "node_modules"
     ],
     "transform": {
       "^.+\\.(js|jsx|mjs|tsx|ts)$": "babel-jest",
@@ -48,9 +46,8 @@
       "^.+\\.scss$": "jest-transform-scss"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(bootstrap-less-port|@hai))"
-    ],
-    "globals": {}
+      "node_modules/(?!(bootstrap-less-port|@somepackage))"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -85,8 +82,14 @@
     "jest-transform-css": "^2.1.0",
     "jest-transform-file": "^1.1.1",
     "jest-transform-scss": "^1.0.8",
+    "jest-watch-typeahead": "0.6.5",
     "react-i18next": "^11.8.12",
     "sass-jest": "^0.1.7",
     "visual-screenshot": "^1.0.1"
+  },
+  "resolutions": {
+    "node-sass": "^6.0.1",
+    "sass-loader": "10.0.5",
+    "react-error-overlay": "6.0.9"
   }
 }
