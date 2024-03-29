@@ -5,8 +5,16 @@
   => nvm install 14.19.1
   => nvm install 16.14.2
      nvm use 16.14.2
- python2 (for node-sass compiling)
-  => $ npm install --global --production windows-build-tools@4.0.0
+ python3 (for node-sass compiling). 
+ Download 3.10.X max, 3.11.0 is broken for some tools here.
+ Make sure you select to add to Path.
+ Then install:
+ $ pip install setuptools
+
+ $ npm install --global --production windows-build-tools@4.0.0
+  or
+ $ npm install -g node-gyp
+
  Visual Studio 2013 or 2017 (The free Community version is fine, again for compiling node-sass)
 
 # Setup
