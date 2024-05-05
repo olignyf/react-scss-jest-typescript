@@ -19,7 +19,7 @@
     "http-browserify": "^1.7.0",
     "http-proxy-middleware": "^3.0.0",
     "https-browserify": "^1.0.0",
-    "react-i18next": "^11.8.12",
+    "react-i18next": "^14.1.1",
     "i18next": "^23.10.1",
     "i18next-browser-languagedetector": "^6.1.0",
     "i18next-intervalplural-postprocessor": "^3.0.0",
