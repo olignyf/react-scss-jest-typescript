@@ -628,8 +628,6 @@ define(function (require) {
 		return typeof item;
 	};
 
-
-
 	Toolbox.cloneArray = function(myArray) 
 	{
 		var i = myArray.length, clone = new Array(i);
@@ -685,13 +683,27 @@ define(function (require) {
 			}
 			return original;
 	};
-	
-	
+		
 	//////////////////////////////////////////			
 	// MIT license. Code from MooTools ends
 	//////////////////////////////////////////
 
 	
+Toolbox.getOffset = function(element)
+{
+    if (!element.getClientRects().length)
+    {
+      return { top: 0, left: 0 };
+    }
+
+    let rect = element.getBoundingClientRect();
+    let win = element.ownerDocument.defaultView;
+    return (
+    {
+      top: rect.top + win.pageYOffset,
+      left: rect.left + win.pageXOffset
+    });
+};
 	return Toolbox;
 });
 

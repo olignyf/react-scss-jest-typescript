@@ -176,7 +176,8 @@ define(function (require) {
 	
 			if (console) console.log("begin drag, top pos:"+elementRect.top);
 			
-			var $offset = $(divElement).offset();
+			//var $offset = $(divElement).offset();
+            var $offset = T.getOffset(divElement);
 			if (console) console.log("begin drag, jquery top pos:"+$offset.top);
 	
 			divElement.style.position = "absolute";
@@ -352,7 +353,6 @@ define(function (require) {
 		
 		// calculate current drag position
 		
-		
 		// calculate each position
 		divs.forEach(function(div) // frank fixme do a polyfill for forEach
 		{
@@ -381,6 +381,10 @@ define(function (require) {
 				placeholderY = elementRect.top;
 			}
 		});
+
+        if (smallestDistanceWith == null) {
+            return; // maybe no elements 
+        }
 		
 		if (smallestDistanceWith.id !== g_currentDivDragging.id)
 		{
