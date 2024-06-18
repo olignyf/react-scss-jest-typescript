@@ -1,0 +1,20 @@
+
+#todos {
+    display:flex;
+    ul {        
+  align-self: center;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    gap:15px;
+    }
+
+    li.todo.item {
+    border-radius: 7px;
+    padding:15px 0;
+    min-height:90px;
+    background-color:$gray-09;
+    color:$gray-01;
+    gap:5px;
+    }
+}

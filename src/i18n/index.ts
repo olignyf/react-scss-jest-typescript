@@ -33,6 +33,7 @@ export const supportedLanguages = [Language.English];
 const buildResourcesConfig: (translations: {
   [locale: string]: any;
 }) => { [key: string]: { [locale: string]: any } } = (translations) => {
+  console.log('build ing resss, ', translations)
   const resources: { [key: string]: { [locale: string]: any } } = {};
   Object.keys(translations).forEach((locale) => {
     resources[locale] = {

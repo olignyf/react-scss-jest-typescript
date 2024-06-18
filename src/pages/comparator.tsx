@@ -1,5 +1,5 @@
 
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { GenericObject } from '../models/generics';
 import { Link, Outlet, Route, Router, Routes, useNavigate } from 'react-router-dom';
 import { ComparatorCPU } from './comparator-cpu';
@@ -13,9 +13,8 @@ interface Props<T extends GenericObject> {
 /**
  *
  */
-export const Comparator: <T extends GenericObject>(
-    props: Props<T>,
-  ) => React.ReactElement<Props<T>> = ({ children, list }) => {
+export const Comparator = <T extends GenericObject>(props: Props<T>) => {
+    const { children, list } = props
     const navigate = useNavigate();
   
     return <>

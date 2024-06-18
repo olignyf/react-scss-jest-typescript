@@ -10,12 +10,27 @@ import { Help } from './pages/help';
 import { Outlet } from 'react-router-dom';
 import { Comparator } from './pages/comparator';
 import { ComparatorCPU } from './pages/comparator-cpu';
+import { FileExplorer } from './pages/file-explorer/file-explorer';
+
+import { initializeI18n } from 'src/i18n';
+import { Todos } from './pages/todos/todos';
+initializeI18n();
 
 const productRoutes = [
   {
     path: '/',
     label: 'Home',
     component: <Home/>
+  },
+  {
+    path: '/todos',
+    label: 'TODOs',
+    component: <Todos/>
+  },
+  {
+    path: '/file-explorer',
+    label: 'File Explorer',
+    component: <FileExplorer/>
   },
   {
     path: '/comparator',
@@ -60,7 +75,7 @@ function App() {
 
 
 
-      <div id="outlet">OUTLET
+      <div id="outlet">
       <Outlet />
       </div>
       

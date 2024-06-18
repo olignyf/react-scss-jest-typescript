@@ -2,7 +2,7 @@
 
 import natsort from 'natsort';
 import React, { ReactElement } from 'react';
-import { GenericObject } from '../models/generics';
+import { GenericObject } from 'src/models/generics';
 
 export type Comparator<T> = (a: T, b: T) => -1 | 0 | 1;
 
@@ -18,15 +18,8 @@ export enum SortDirection {
   ASCENDING = 1,
 }
 
-// for our view models
-export interface MakitoObject {
-  id: number | string;
-  selected: boolean;
-  hidden: boolean;
-}
-
 /* extends {id:string|number}*/
-interface Props<T extends MakitoObject> {
+interface Props<T extends GenericObject> {
   children: ReactElement[]; // each mapping to a T element with key = T.id
   list: T[];
   sortInfo: {
@@ -46,6 +39,7 @@ interface Props<T extends MakitoObject> {
   };
   sortKey: keyof T | string;
   direction: SortDirection;
+  uuid?: any; 
 }
 
 // local helper functions
@@ -78,6 +72,7 @@ const comparatorNaturalSort = (
   a: any,
   b: any,
   dirVal: any,
+  uuid: any,
   provider?: (model: any) => any,
 ): 0 | 1 | -1 => {
   let valueA = a[item];
@@ -89,10 +84,10 @@ const comparatorNaturalSort = (
   const result = natsortFunc(valueA, valueB);
 
   // keep new stream form on top
-  if (a.id === -1) {
+  if (a[uuid] === -1) {
     return -1;
   }
-  if (b.id === -1) {
+  if (b[uuid] === -1) {
     return 1;
   }
 
@@ -113,15 +108,16 @@ const comparatorGeneric = (
   a: any,
   b: any,
   dirVal: any,
+  uuid: any,
   provider?: (model: any) => any,
 ): 0 | 1 | -1 => {
   let result = 0;
 
   // keep new stream form on top
-  if (a.id === -1) {
+  if (a[uuid] === -1) {
     return -1;
   }
-  if (b.id === -1) {
+  if (b[uuid] === -1) {
     return 1;
   }
 
@@ -150,7 +146,7 @@ const comparatorGeneric = (
  */
 export const SortManager: <T extends GenericObject>(
   props: Props<T>,
-) => React.ReactElement<Props<T>> = ({ children, list, sortInfo, direction, sortKey }) => {
+) => React.ReactElement<Props<T>> = ({ children, list, sortInfo, direction, sortKey, uuid = 'id' }) => {
   let comparator = comparatorNoSorting;
   if (sortInfo[sortKey] !== undefined) {
     if (sortInfo[sortKey].type === SortType.GENERIC) {
@@ -174,8 +170,8 @@ export const SortManager: <T extends GenericObject>(
   // Actual sort
   if (Array.isArray(children)) {
     children = [...children].sort((a, b) => {
-      const item1 = list.find((item) => item?.id == a.key);
-      const item2 = list.find((item) => item?.id == b.key);
+      const item1 = list.find((item) => item[uuid] == a.key);
+      const item2 = list.find((item) => item[uuid] == b.key);
 
       return comparator(item1, item2, direction);
     });

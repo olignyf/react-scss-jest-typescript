@@ -10,7 +10,7 @@ interface Props {
 /**
  *
  */
-export const Home: (props: Props) => React.ReactElement = () => {
+export const Home = (props: Props) => {
   
     return <>Welcome
     

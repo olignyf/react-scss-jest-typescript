@@ -1,5 +1,7 @@
-@import 'theme/light.scss';
-@import 'components/sidebar.scss';
+@import './light.scss';
+
+$gray-01: #f0f0f0;
+$gray-09: #0f0f0f;
 
 body {
   margin: 0;
@@ -15,3 +17,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import 'src/components/sidebar.scss';
+@import 'src/components/modal.scss';
+@import 'src/pages/todos/todos.scss'

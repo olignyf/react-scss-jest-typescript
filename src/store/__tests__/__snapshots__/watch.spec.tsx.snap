@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watch store useWatch single property 1`] = `
+<div>
+  bitrate: 
+  5000
+</div>
+`;
+
+exports[`watch store useWatch single property 2`] = `
+<div>
+  bitrate: 
+  6000
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, add item at the beginning 1`] = `
+<div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, add item at the beginning 2`] = `
+<div>
+  <div>
+    bitrate: 
+    2002
+  </div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, add item at the end 1`] = `
+<div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, add item at the end 2`] = `
+<div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+  <div>
+    bitrate: 
+    1001
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, delete item 1`] = `
+<div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, delete item 2`] = `
+<div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, swap item 1`] = `
+<div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;
+
+exports[`watch store useWatchObject on an array, swap item 2`] = `
+<div>
+  <div>
+    bitrate: 
+    2000
+  </div>
+  <div>
+    bitrate: 
+    5000
+  </div>
+  <div>
+    bitrate: 
+    3000
+  </div>
+</div>
+`;

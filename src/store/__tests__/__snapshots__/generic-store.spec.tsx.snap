@@ -1,0 +1,777 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generic store bug check a object with modification initial state shouldnt be modified by second object updates 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store bug check to not modify original object when having ignore list 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store create watch store and get notification of a simple change 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store create watch store and get notification of a simple change 2`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={true}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={true}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store hasItemsChanged 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store ignoring stats 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store reset 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`generic store setState issue 1 1`] = `
+Array [
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={true}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={true}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+  <div>
+    <div>
+      bitrate: 
+      5000
+    </div>
+    <div>
+      <label>
+        Output 1
+        <input
+          checked={false}
+          name="outputs[0]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 2
+        <input
+          checked={false}
+          name="outputs[1]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 3
+        <input
+          checked={false}
+          name="outputs[2]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Output 4
+        <input
+          checked={false}
+          name="outputs[3]"
+          type="checkbox"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
