@@ -19,6 +19,8 @@ export const TodosItem = (props: Props) => {
     const { id, model, ...rest } = props;
     const { t } = useTranslation();
 
+    console.log('render todo', model.id)
+
     useEffect(() => {
       
 		   const els = T.getAllElements(".jsDragMe");
@@ -55,7 +57,17 @@ export const TodosItem = (props: Props) => {
 
     }, []);
   console.log('todo', model)
-    return  <li className="item todo jsDragEl transition500ms jsDragMe" id={id ?? `id_div_city_${model.id}`} {...rest} data-drag-removeClass="transition500ms" data-drag-replaceWith="#tmplCityPlaceholder" data-name="%%name%%" todo-id={model.id} data-drag-id={`todo_${model.id}`}>
+  return <div id={id ?? `id_div_city_${model.id}`} className="jsDragEl city transition500ms jsDragMe" data-drag-removeClass="transition500ms" data-drag-replaceWith="#tmplCityPlaceholder" data-name={model.name} todo-id={model.id} data-drag-id={`todo_${model.id}`} >
+	<h3>{model.name}</h3>
+	<div className="loading"><img src="img/loading-64x64.gif" alt="loading"/></div>
+		<div className="data">
+			<span>{model.details}°C</span>
+			<div className="icon"><img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" height="50" alt={model.details} title={model.details}/></div>
+		</div>
+</div>;
+
+    return  <li className="item todo jsDragEl transition500ms jsDragMe" id={id ?? `id_div_city_${model.id}`} {...rest} data-drag-removeClass="transition500ms" 
+    data-drag-replaceWith="#tmplCityPlaceholder" data-name="%%name%%" todo-id={model.id} data-drag-id={`todo_${model.id}`}>
        <span>{model.id}</span>
        <span>{model.name}</span>
        <span>{model.details}</span>

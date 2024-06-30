@@ -1,6 +1,6 @@
 
 #todos {
-    display:flex;
+    display:block;
     ul {        
   align-self: center;
   list-style-type: none;
@@ -10,6 +10,7 @@
     }
 
     li.todo.item {
+      width:400px;
     border-radius: 7px;
     padding:15px 0;
     min-height:90px;
@@ -18,3 +19,29 @@
     gap:5px;
     }
 }
+
+div.listContainer {
+  text-align:center;
+}
+div.city {
+  float:left;
+  font-size:0.875em;
+  width:12em;
+  min-height:20em;
+  margin-right:1em;
+  margin-top:1em;
+  padding:0.2em 0.5em 0.5em 0.5em;
+  background-color:#8f8f8f;
+  border-radius:12px;
+  border:1px solid #8f8f8f;
+  cursor:pointer;
+  text-align:center;
+}
+div.city:hover {
+  border:1px solid White;
+  background-color:#afafaf;
+}
+div.city.fadeOut {
+  opacity:0;
+}
+div.city.marginAlignCenter { margin:0 auto; display:inline-block; float:none; }

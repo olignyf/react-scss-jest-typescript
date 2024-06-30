@@ -47,14 +47,14 @@ const onSort= () => {
       };
 
    const values = Object.values(list);
-   console.log(values)
-    return <div id="todos">
-       <ul id={id} {...rest}>
+   console.log(values) //<ul id={id} {...rest}>
+    return <div id="todos">      <div className="listContainer">      
+
       <SortManager uuid="id" sortInfo={sortInfo} list={values} sortKey={sorting} direction={direction}>
     {Object.keys(list).map(entry => {
       return <TodosItem key={list[entry].id} model={list[entry]}/>
     })}
     </SortManager>   
-    </ul></div>;
+    </div></div>;
   };
   

@@ -164,14 +164,16 @@ define(function (require) {
 		}
 	
 		var varX = xMousePos - g_initial_drag_position_x;
-		var varY = yMousePos - g_initial_drag_position_y;
+		var varY = yMousePos - g_initial_drag_position_y/* - window.scrollY*/;
+		console.log('varY',varY)
 		
+		var bodyRect = document.body.getBoundingClientRect();
+	    var elementRect = divElement.getBoundingClientRect();
+
 		if (divElement.style.position !== "absolute")
 		{
 			//convert to absolute
 			// get current top-left position
-			var bodyRect = document.body.getBoundingClientRect();
-			var elementRect = divElement.getBoundingClientRect();
 	//		var offset = elemRect.top - bodyRect.top;
 	
 			if (console) console.log("begin drag, top pos:"+elementRect.top);
@@ -185,8 +187,9 @@ define(function (require) {
 	//		T.addClass(divElement, "draggingAbsolutePos");
 			divElement.style.left = elementRect.left + "px";
 			divElement.style.top = elementRect.top + "px";
-			g_initial_div_position_x = elementRect.left;
-			g_initial_div_position_y = elementRect.top;
+			g_initial_div_position_x = elementRect.left + window.scrollX;
+			g_initial_div_position_y = elementRect.top + window.scrollY;
+			// need to adjust with scrolling.
 			//g_initial_drag_position_x = elementRect.left;
 			//g_initial_drag_position_y = elementRect.top;
 			varX = varY = 0;
@@ -221,7 +224,13 @@ define(function (require) {
 				html = T.Replace(html, {id:"ph"}); // after handling and removing logic blocks, parse everything
 				var newDiv = document.createElement("div");
 				newDiv.innerHTML = html;
+				const placeHolder = T.getElement("div", newDiv);
+				if (placeHolder) {
+					placeHolder.style.width = elementRect.width+'px';
+					placeHolder.style.height =elementRect.height+'px';
+				}
 				var parentNode = divElement.parentNode;
+				console.log('parentNode is', parentNode)
 				parentNode.insertBefore(newDiv, divElement);
 				g_currentPlaceholder = newDiv;
 			}
@@ -260,7 +269,7 @@ define(function (require) {
 		}
 		divElement.style.top = g_div_position_y = g_initial_div_position_y + varY + "px";
 		
-		CaptureMousePosition.manageGroups("div.jsDragEl");
+		CaptureMousePosition.manageGroups(".jsDragEl");
 	}
 	
 	CaptureMousePosition.startDrag = function(target_id, event, options)
@@ -340,16 +349,18 @@ define(function (require) {
 		return wasDragging;
 	}
 
-	// 
+	// This switches the placeholder to the nearest target
 	CaptureMousePosition.manageGroups = function(selector)
 	{
-		var divs = T.getAll(selector);
-		
+		var divs = T.getAll(selector); // FIXME find from top listContainer
+		 
 		var smallestDistanceWith = null;
 		var smallestDistance = 0xFFFFFFFF;
 		
 		var placeholderX = null;
 		var placeholderY = null;
+		var placeholderW = null;
+		var placeholderH = null;
 		
 		// calculate current drag position
 		
@@ -357,18 +368,19 @@ define(function (require) {
 		divs.forEach(function(div) // frank fixme do a polyfill for forEach
 		{
 			var elementRect = div.getBoundingClientRect();
+            console.log('elementRect', elementRect)
 			if (div._t == null) div._t = {};
 			if (div.id === g_currentDivDragging.id && div.attributes['data-drag-placeholder'] == null)
 			{
 				// dont diff with ourself 
 				return;
 			}
-			var x2 = Math.pow(parseInt(g_div_position_x,10) - elementRect.left, 2);
-			var y2 = Math.pow(parseInt(g_div_position_y,10) - elementRect.top, 2);
+			var x2 = Math.pow(parseInt(g_div_position_x,10) - (elementRect.left + window.scrollX), 2);
+			var y2 = Math.pow(parseInt(g_div_position_y,10) - (elementRect.top + window.scrollY), 2);
 			div._t.x = elementRect.left;
 			div._t.y = elementRect.top;
 			div._t.distanceWidth = Math.sqrt(x2 + y2)
-			//if (console) console.log("distance with "+div.attributes['data-name'].value+" " + div._t.distanceWidth);
+			if (console) console.log("distance with "+div.attributes['data-name'].value+" " + div._t.distanceWidth);
 			if (smallestDistance > div._t.distanceWidth)
 			{
 				smallestDistance = div._t.distanceWidth;
@@ -379,6 +391,8 @@ define(function (require) {
 			{
 				placeholderX = elementRect.left;
 				placeholderY = elementRect.top;
+				placeholderW = elementRect.width; // UNUSED
+				placeholderH = elementRect.height; // UNUSED
 			}
 		});
 
@@ -394,7 +408,7 @@ define(function (require) {
 				// dont need to move
 				return;
 			}
-			//if (console) console.log("Moving to new spot:"+smallestDistanceWith.id + ", :"+g_currentDivDragging.id);
+			if (console) console.log("Moving to new spot:"+smallestDistanceWith.id + ", :"+g_currentDivDragging.id);
 			if (console) console.log("Moving to new spot:"+smallestDistanceWith.attributes['data-name'].value);
 			var parentNode = g_currentPlaceholder.parentNode;		
 			var entry = smallestDistanceWith.nextSibling;
@@ -412,12 +426,12 @@ define(function (require) {
 			console.log("before:"+before);
 			if (!before)
 			{
-				//console.log("before");
+				console.log("before");
 				parentNode.insertBefore(g_currentPlaceholder, smallestDistanceWith);
 			}
 			else
 			{
-				//console.log("after");
+				console.log("after");
 				if (entry == null) console.log("NO ENTRY");
 				parentNode.insertBefore(g_currentPlaceholder, entry);
 			}
