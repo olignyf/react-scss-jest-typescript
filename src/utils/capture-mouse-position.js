@@ -17,6 +17,7 @@
 //
 //////////////////////////////////////////////////////
 "use strict";
+
 define(function (require) {
 
 	var T = require('./ui-toolbox');
@@ -164,11 +165,10 @@ define(function (require) {
 		}
 	
 		var varX = xMousePos - g_initial_drag_position_x;
-		var varY = yMousePos - g_initial_drag_position_y/* - window.scrollY*/;
-		console.log('varY',varY)
+		var varY = yMousePos - g_initial_drag_position_y;
 		
 		var bodyRect = document.body.getBoundingClientRect();
-	    var elementRect = divElement.getBoundingClientRect();
+		var elementRect = divElement.getBoundingClientRect();
 
 		if (divElement.style.position !== "absolute")
 		{
@@ -179,8 +179,8 @@ define(function (require) {
 			if (console) console.log("begin drag, top pos:"+elementRect.top);
 			
 			//var $offset = $(divElement).offset();
-            var $offset = T.getOffset(divElement);
-			if (console) console.log("begin drag, jquery top pos:"+$offset.top);
+			// var $offset = T.getOffset(divElement);
+			// if (console) console.log("begin drag, jquery top pos:"+$offset.top);
 	
 			divElement.style.position = "absolute";
 			divElement.style.marginTop = "0";
@@ -225,12 +225,13 @@ define(function (require) {
 				var newDiv = document.createElement("div");
 				newDiv.innerHTML = html;
 				const placeHolder = T.getElement("div", newDiv);
-				if (placeHolder) {
+				if (placeHolder)
+				{
 					placeHolder.style.width = elementRect.width+'px';
 					placeHolder.style.height =elementRect.height+'px';
 				}
 				var parentNode = divElement.parentNode;
-				console.log('parentNode is', parentNode)
+				// console.log('parentNode is', parentNode)
 				parentNode.insertBefore(newDiv, divElement);
 				g_currentPlaceholder = newDiv;
 			}
@@ -269,7 +270,7 @@ define(function (require) {
 		}
 		divElement.style.top = g_div_position_y = g_initial_div_position_y + varY + "px";
 		
-		CaptureMousePosition.manageGroups(".jsDragEl");
+		CaptureMousePosition.manageGroups(".jsDragEl"); // FIXME bound to parent
 	}
 	
 	CaptureMousePosition.startDrag = function(target_id, event, options)
@@ -396,9 +397,9 @@ define(function (require) {
 			}
 		});
 
-        if (smallestDistanceWith == null) {
-            return; // maybe no elements 
-        }
+		if (smallestDistanceWith == null) {
+			return; // maybe no elements 
+		}
 		
 		if (smallestDistanceWith.id !== g_currentDivDragging.id)
 		{
@@ -426,12 +427,10 @@ define(function (require) {
 			console.log("before:"+before);
 			if (!before)
 			{
-				console.log("before");
 				parentNode.insertBefore(g_currentPlaceholder, smallestDistanceWith);
 			}
 			else
 			{
-				console.log("after");
 				if (entry == null) console.log("NO ENTRY");
 				parentNode.insertBefore(g_currentPlaceholder, entry);
 			}
@@ -465,7 +464,13 @@ define(function (require) {
 		
 		T.onEvent('mouseup', els, function(event)
 		{
-         var element = event.currentTarget;
+			var element = event.currentTarget;
+			stopDrag();	
+		});
+
+		T.onEvent('mouseup', document, function(event)
+		{
+			// console.log('mouse up global')
 			stopDrag();	
 		});
 		

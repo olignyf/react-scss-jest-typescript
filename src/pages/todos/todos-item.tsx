@@ -44,15 +44,21 @@ export const TodosItem = (props: Props) => {
        
        unbinders = T.onEvent('mouseup', els, function(event)
        {
-            var element = event.currentTarget;
+         var element = event.currentTarget;
          var wasDragging = CaptureMousePosition.stopDrag();
          
          if (wasDragging != 2) // 2 == got moved
          {
           // onClickDiv(element, self);
          }
+
        });
        
+        unbinders = T.onEvent('mouseup', document, function(event)
+         {
+           // console.log('mouse up global')
+           CaptureMousePosition.stopDrag();	
+         });
        unbinders.splice(0, 0, unbinders); // push unbinders
 
     }, []);
