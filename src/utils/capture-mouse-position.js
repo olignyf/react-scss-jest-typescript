@@ -22,7 +22,7 @@ define(function (require) {
 
 	var T = require('./ui-toolbox');
 	
-	function CaptureMousePosition() {
+	function CaptureMousePosition() { 
 		if (console) console.log("WARNING: You do not need to call new CaptureMousePosition(). You can use it directly, e.g., CaptureMousePosition.bindAll(...)");
 	}
 

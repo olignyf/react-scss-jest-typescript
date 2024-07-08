@@ -3,8 +3,12 @@ import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next'; 
 import { TodosEntry } from './todos-model';
 
-var T = require('src/utils/ui-toolbox');
+//import T from 'web-ui-dom';
+import T from 'src/utils/ui-toolbox';
+import { Col } from 'react-bootstrap';
 var CaptureMousePosition = require('src/utils/capture-mouse-position')
+//import CaptureMousePosition from 'capture-mouse';
+//import {T} from 'capture-mouse';
 
 /* extends {id:string|number}*/
 interface Props {
@@ -67,6 +71,7 @@ export const TodosItem = (props: Props) => {
 	<h3>{model.name}</h3>
 	<div className="loading"><img src="img/loading-64x64.gif" alt="loading"/></div>
 		<div className="data">
+    <Col></Col>
 			<span>{model.details}°C</span>
 			<div className="icon"><img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" height="50" alt={model.details} title={model.details}/></div>
 		</div>

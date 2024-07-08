@@ -15,8 +15,8 @@ module.exports = {
     console.error('OVERRIDDDDEEEEE')
     console.error('OVERRIDDDDEEEEE')
     console.error('OVERRIDDDDEEEEE')
-    config.resolve.alias.https = "https-browserify";
-    config.resolve.alias.http = "http-browserify";
+    //config.resolve.alias.https = "https-browserify";
+   // config.resolve.alias.http = "http-browserify";
     return config;
   },
 };
