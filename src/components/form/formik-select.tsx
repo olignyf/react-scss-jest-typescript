@@ -1,5 +1,7 @@
 import { Field, FieldProps, useField } from 'formik';
 import React from 'react';
+import { Label } from './label';
+import { FormField } from './form-field';
 
 interface Props {
   name: string;
@@ -54,17 +56,14 @@ export const FormikSelect = (props: Props) => {
     return (
       <FormField className={`FormItem${additionalClassNames}`}>
         <Label required={required}>{title}</Label>
-        <FormControl
-          as="select"
+        <select
           name={name}
-          invalid={hasErrors}
           disabled={disabled}
-          defaultSelect={defaultValue(meta.value || meta.initialValue)}
-          selectMenuDirection={direction}
+          value={defaultValue(meta.value || meta.initialValue)}
           onChange={onChange}
         >
           {selectLabels.map((textValue: string, index: number) => (
-            <SelectOption
+            <option
               key={selectValues[index]}
               value={selectValues[index]}
               onChange={() => {
@@ -73,10 +72,9 @@ export const FormikSelect = (props: Props) => {
               }}
             >
               {textValue}
-            </SelectOption>
+            </option>
           ))}
-        </FormControl>
-        <FormFieldError show={hasErrors} mssg={meta.error} />
+        </select>
       </FormField>
     );
   };

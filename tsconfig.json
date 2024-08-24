@@ -1,27 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "lib": ["es2017", "es2016", "es2019", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "alwaysStrict": true,
+    "removeComments": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "strictPropertyInitialization": false,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "outDir": "dist",
+    "target": "es5",
+    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
+    "emitDecoratorMetadata": false,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".", /* this allow to use full path instead of only relative paths */
+    "allowJs": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", "**/.*/", "**/*.spec.tsx"],
+  "include": ["src/**/*", "src/images/*"]
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { FormFieldError } from './form-field-error';
 import { FormField } from './form-field';
 import { Label } from './label';
+import Switch from 'react-bootstrap/esm/Switch';
 
 interface Props {
   name: string;
@@ -58,7 +59,7 @@ export const FormikSwitch: React.FunctionComponent<Props> = ({
       {loading === true ? (
         <div className="p0p-switch-placeholder-label">
           <div>{switchLabel}</div>
-          <Placeholder as="layout" />
+          {/* TODO PLACEHOLDER */}
         </div>
       ) : (
         <Switch
@@ -77,7 +78,6 @@ export const FormikSwitch: React.FunctionComponent<Props> = ({
           labelPlacement={labelPlacement}
         />
       )}
-      <FormFieldError show={hasErrors} mssg={meta.error} />
     </FormField>
   );
 };

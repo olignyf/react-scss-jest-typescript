@@ -28,9 +28,9 @@ export const TodosItem = (props: Props) => {
     useEffect(() => {
       
 		   const els = T.getAllElements(".jsDragMe");
-       let unbinders = T.onEvent('mousedown', els, function(event)
+       let unbinders = T.onEvent('mousedown', els, (event:Event) =>
        {
-         var element = event.currentTarget;
+         var element = event.currentTarget as HTMLDivElement;
          var options = {};
          if (element.attributes['data-drag-removeClass'] != null)
          {
@@ -46,7 +46,7 @@ export const TodosItem = (props: Props) => {
        });
        unbinders.splice(0, 0, unbinders); // push unbinders
        
-       unbinders = T.onEvent('mouseup', els, function(event)
+       unbinders = T.onEvent('mouseup', els, (_event:Event) =>
        {
          var element = event.currentTarget;
          var wasDragging = CaptureMousePosition.stopDrag();
@@ -58,7 +58,7 @@ export const TodosItem = (props: Props) => {
 
        });
        
-        unbinders = T.onEvent('mouseup', document, function(event)
+        unbinders = T.onEvent('mouseup', document, (_event:Event) =>
          {
            // console.log('mouse up global')
            CaptureMousePosition.stopDrag();	

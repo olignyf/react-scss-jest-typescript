@@ -10,7 +10,7 @@ import { TodosEntry, TodosEntryResponse, TodosResponse } from './todos-model';
 
 // values will be inited from API at runtime
 const TodosEntries: TodosEntry[] = [];
-export const todosStore = new GenericStore(TodosEntries, ['parent', 'updated', 'hidden', 'selected']);
+export const todosStore = new GenericStore(TodosEntries, ['updated', 'hidden', 'selected']);
 export default todosStore;
 
 const todosWatch = createWatchStore(TodosEntries);
@@ -24,7 +24,7 @@ const mapViewModelToRequest = (viewModel: TodosEntry) => {
   
 }
 
-const replaceViewModel = (response: TodosEntry, t: TFunction, selected = false) => {
+const replaceViewModel = (response: TodosEntry, _t: TFunction, selected = false) => {
   const viewModel = response;
   const decoders = [...TodosEntries];
   const index = decoders.findIndex((d) => d.id === viewModel.id);
@@ -64,7 +64,7 @@ export const createTodoEntry = (model: any, t: TFunction, displayMsg = true) => 
       return res;
     })
     .then((res) => {
-      notificationHandler(
+      displayMsg && notificationHandler(
         res,
         t('decoder.notifications.createSuccess', { name: res.data?.model?.name }),
         t('decoder.notifications.createError', { name: model.name }),
@@ -90,7 +90,7 @@ export const updateTodosEntry = (model: TodosEntry, t: TFunction, displayMsg = t
       return res;
     })
     .then((res) => {
-      notificationHandler(
+      displayMsg && notificationHandler(
         res,
         t('decoder.notifications.updateSuccess', { name: res.data?.model?.name }),
         t('decoder.notifications.updateError', { name: model.name }),
