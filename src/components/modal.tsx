@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 /* extends {id:string|number}*/
 interface Props {
-     acceptLabel?: string;
- cancelLabel?: string;
+  acceptLabel?: string;
+  cancelLabel?: string;
   children?: React.ReactNode;
   id?: string;
-  onApply: (ev:Event|FormEvent<HTMLFormElement>) => Promise<any> | void;
+  onApply: (ev:FormEvent<HTMLFormElement>|Event) => Promise<any> | void;
   onClose: () => void;
 
 }

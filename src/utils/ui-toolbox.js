@@ -15,11 +15,9 @@
 //
 //////////////////////////////////////////////////////
 "use strict";
-define(function (require) {
-		
-	function Toolbox() {
+function Toolbox() {
 		if (console) console.log("WARNING: You do not need to call new Toolbox(). You can use it directly, e.g., Toolbox.addClass(...)");
-	}
+};
 
 	// Reason to be: Javascript native reduce() function does *not* work for an array with a single element
 	// elements is an array[]
@@ -703,7 +701,6 @@ Toolbox.getOffset = function(element)
       top: rect.top + win.pageYOffset,
       left: rect.left + win.pageXOffset
     });
-};
-	return Toolbox;
-});
+}
 
+module.exports = Toolbox;

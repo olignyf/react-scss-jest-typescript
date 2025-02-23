@@ -1,6 +1,6 @@
 # Requirements:
  nvm version 1.1.7 minimum
- node 10.X minimum, 16.X recommended
+ node 18.X recommended 10.X minimum, 16.X recommended
  versions tested with:
   => nvm install 14.19.1
   => nvm install 16.14.2

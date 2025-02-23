@@ -1,13 +1,7 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { FormField } from './form-field';
 import { FormFieldError } from './form-field-error';
 
-export enum SDIType {
-  NORMAL = 'normal',
-  HIGHLIGHT = 'highlight',
-  OUTLINE = 'outline',
-}
 
 interface Props {
   id?: string;
@@ -16,6 +10,7 @@ interface Props {
   className?: string;
   placeholder?: string;
   disabled?: boolean;
+  invalid?: boolean;
   name?: string;  
   type?: string;
   value?: string;
@@ -29,10 +24,10 @@ interface Props {
 }
 
 export const InputText = (props:Props) => {
-    const { children, className, disabled, name, type='text', value, validationError, onChange, onKeyDown, onKeyPress, onKeyUp, ...rest} = props;
+  const { children, className, disabled, name, invalid, type='text', value, validationError, onChange, onKeyDown, onKeyPress, onKeyUp, ...rest} = props;
 
   return (
-    <label className={classNames('form-input-text', className)}>
+    <label className={classNames('form-input-text', className, invalid && "invalid")}>
       <input        
         disabled={disabled}
         name={name}

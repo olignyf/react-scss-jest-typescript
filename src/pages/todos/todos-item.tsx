@@ -31,22 +31,22 @@ export const TodosItem = (props: Props) => {
        let unbinders = T.onEvent('mousedown', els, (event:Event) =>
        {
          var element = event.currentTarget as HTMLDivElement;
-         var options = {};
-         if (element.attributes['data-drag-removeClass'] != null)
+         var options:any = {};
+         const attributes = (element.attributes as any);
+         if (attributes['data-drag-removeClass'] != null)
          {
-           options.removeClass = element.attributes['data-drag-removeClass'].value;
+           options.removeClass = attributes['data-drag-removeClass'].value;
          }
          
-         if (element.attributes['data-drag-replaceWith'] != null)
+         if (attributes['data-drag-replaceWith'] != null)
          {
-           options.replaceWith = element.attributes['data-drag-replaceWith'].value;
+           options.replaceWith = attributes['data-drag-replaceWith'].value;
          }
          
          CaptureMousePosition.startDrag(element.id, event, options);
        });
-       unbinders.splice(0, 0, unbinders); // push unbinders
        
-       unbinders = T.onEvent('mouseup', els, (_event:Event) =>
+       let unbindersNew = T.onEvent('mouseup', els, (_event:Event) =>
        {
          var element = event.currentTarget;
          var wasDragging = CaptureMousePosition.stopDrag();
@@ -57,13 +57,14 @@ export const TodosItem = (props: Props) => {
          }
 
        });
+       unbinders.splice(0, 0, ...unbindersNew); // push unbinders
        
-        unbinders = T.onEvent('mouseup', document, (_event:Event) =>
+       unbindersNew = T.onEvent('mouseup', document, (_event:Event) =>
          {
            // console.log('mouse up global')
            CaptureMousePosition.stopDrag();	
          });
-       unbinders.splice(0, 0, unbinders); // push unbinders
+       unbinders.splice(0, 0, ...unbindersNew); // push unbinders
 
     }, []);
   console.log('todo', model)

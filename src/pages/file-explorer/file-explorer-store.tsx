@@ -22,7 +22,7 @@ const mapViewModelToRequest = (viewModel: FileExplorerEntry) => {
   return viewModel;
 }
 
-const replaceViewModel = (response: FileExplorerEntry, t: TFunction, selected = false) => {
+const replaceViewModel = (response: FileExplorerEntry, _t: TFunction, selected = false) => {
   const viewModel = response;
   const decoders = [...fileExplorerEntries];
   const index = decoders.findIndex((d) => d.id === viewModel.id);
@@ -32,12 +32,12 @@ const replaceViewModel = (response: FileExplorerEntry, t: TFunction, selected = 
   fileExplorerStore.saveResponse(decoders);
 };
 
-export const fetchFileEntries = (t: TFunction) => {
+export const fetchFileEntries = (_t: TFunction) => {
   return apiClient.genericController.get<FileExplorerResponse>(APIPath.files.list).then((res) => {
     if (res.ok) {
       const response = res.data;
       if (response) {
-        const viewModels = response.list || [];
+        const viewModels:any = response.list || [];// FIXME
         fileExplorerStore.saveResponse(viewModels);
       }
     }
@@ -61,7 +61,7 @@ export const fetchDecoder = (id: number, t: TFunction) => {
 };
 */
 
-export const updateFileExplorerEntry = (model: any, t: TFunction, displayMsg = true) => {
+export const updateFileExplorerEntry = (model: any, t: TFunction, _displayMsg = true) => {
   const path = APIPathWithArguments(APIPath.files.put, { id: model.id });
   return apiClient.genericController
     .put<FileExplorerEntryResponse>(path, model)
@@ -77,8 +77,8 @@ export const updateFileExplorerEntry = (model: any, t: TFunction, displayMsg = t
     .then((res) => {
       notificationHandler(
         res,
-        t('decoder.notifications.updateSuccess', { name: res.data?.name }),
-        t('decoder.notifications.updateError', { name: res.data?.name }),
+        t('decoder.notifications.updateSuccess', { name: res.data?.model?.filename }),
+        t('decoder.notifications.updateError', { name: res.data?.model?.filename }),
         t,
       );
 

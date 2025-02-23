@@ -10,7 +10,7 @@ interface Props {
 /**
  *
  */
-export const Home = (props: Props) => {
+export const Home = (_props: Props) => {
   
     return <>Welcome
     

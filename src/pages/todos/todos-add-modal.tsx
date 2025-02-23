@@ -24,13 +24,13 @@ export const TodosAddModal = (props: Props) => {
     const formRef = useRef<FormikProps<any>>(null);
     const fileRef = useRef<any>(null);
 
-    const onApplyLocal = (ev: FormEvent<HTMLFormElement>) => {
+    const onApplyLocal = (ev: FormEvent<HTMLFormElement> | Event) => {
       formRef.current?.setFieldValue('file', fileRef.current.files[0]); // formik wont add automatically the drop zone file in the form so do it manually here
-      return formRef.current?.handleSubmit(ev);
+      return formRef.current?.handleSubmit(ev as FormEvent<HTMLFormElement>); // FIXME
      // onApply(formRef.current?.values) 
     }
 
-    return <Modal id={id} {...rest} onApply={onApplyLocal} onCancel={onClose} acceptLabel={t('general.buttons.Create')} cancelLabel={t('general.buttons.Cancel')}>
+    return <Modal id={id} {...rest} onApply={onApplyLocal} onClose={onClose} acceptLabel={t('general.buttons.Create')} cancelLabel={t('general.buttons.Cancel')}>
        Add Todo
        <Formik 
        initialValues={model}

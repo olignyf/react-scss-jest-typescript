@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TodosList } from './todos-list';
-import { createTodoEntry, fetchTodos } from './todos-store';
+import { createTodoEntry, fetchTodos, saveTodos } from './todos-store';
 import { Topbar } from 'src/components/topbar';
 import { useModal } from 'src/hooks/use-modal';
 import { TodosEntry } from './todos-model';
@@ -37,11 +37,16 @@ export const Todos = (props: Props) => {
       createTodoEntry(model, t)
     };
 
+    const onApply = (models:Array<TodosEntry>|Record<string, TodosEntry>) => {
+      console.log('onApply todo', models)
+      saveTodos(models, t)
+    };
+
 
   console.log('add shown', addShown)
     return  <div id={id} {...rest}>
     <h1>{t('todos.title')}</h1>
-    <Topbar onAdd={showAdd}/>
+    <Topbar onAdd={showAdd} onApply={() => onApply(files)}/>
     <TodosList list={files}/>
     {addShown && <TodosAddModal onClose={hideAdd} onApply={onSubmitCreateTodo} model={{name:'', file:undefined}} />}
     </div>;

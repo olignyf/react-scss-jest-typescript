@@ -170,8 +170,8 @@ export const SortManager: <T extends GenericObject>(
   // Actual sort
   if (Array.isArray(children)) {
     children = [...children].sort((a, b) => {
-      const item1 = list.find((item) => item[uuid] == a.key);
-      const item2 = list.find((item) => item[uuid] == b.key);
+      const item1 = list.find((item) => (item as any)[uuid] == a.key);
+      const item2 = list.find((item) => (item as any)[uuid] == b.key);
 
       return comparator(item1, item2, direction);
     });

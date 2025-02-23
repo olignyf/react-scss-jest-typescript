@@ -34,14 +34,14 @@ const replaceViewModel = (response: TodosEntry, _t: TFunction, selected = false)
   todosStore.saveResponse(decoders);
 };
 
-export const fetchTodos = (t: TFunction) => {
+export const fetchTodos = (_t: TFunction) => {
   return apiClient.genericController.get<TodosResponse>(APIPath.todos.list).then((res) => {
     if (res.ok) {
       const response = res.data;
       if (response) {
-        const viewModels = response.list || [];
+        const viewModels:any = response.list || [];
         console.log('ist or record', viewModels)
-        todosStore.saveResponse(viewModels);
+        todosStore.saveResponse(viewModels as any);
       }
     }
     return res;
@@ -76,10 +76,11 @@ export const createTodoEntry = (model: any, t: TFunction, displayMsg = true) => 
 };
 
 
-export const updateTodosEntry = (model: TodosEntry, t: TFunction, displayMsg = true) => {
-  const path = APIPathWithArguments(APIPath.todos.put, { id: model.id });
+// update order and content
+export const saveTodos = (models: Array<TodosEntry>|Record<string, TodosEntry>, t: TFunction, displayMsg = true) => {
+  const path = APIPath.todos.put;
   return apiClient.genericController
-    .put<TodosEntryResponse>(path, model)
+    .put<TodosEntryResponse>(path, models)
     .then((res) => {
       if (res.ok) {
         const response = res.data;
@@ -92,8 +93,8 @@ export const updateTodosEntry = (model: TodosEntry, t: TFunction, displayMsg = t
     .then((res) => {
       displayMsg && notificationHandler(
         res,
-        t('decoder.notifications.updateSuccess', { name: res.data?.model?.name }),
-        t('decoder.notifications.updateError', { name: model.name }),
+        t('todos.notifications.updateAllSuccess'),
+        t('todos.notifications.updateAllError'),
         t,
       );
 
